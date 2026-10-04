@@ -1,0 +1,35 @@
+services:
+
+  open-webui:
+
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    image: stargate-open-webui:latest
+
+    container_name: open-webui
+
+    restart: always
+
+    ports:
+      - "8080:8080"
+
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+    environment:
+      OLLAMA_BASE_URL: http://host.docker.internal:11434
+
+      RAG_EMBEDDING_ENGINE: ollama
+      RAG_EMBEDDING_MODEL: nomic-embed-text
+
+      ENABLE_TITLE_GENERATION: "false"
+
+      USE_OLLAMA_DOCKER: "false"
+
+    volumes:
+      - open-webui-data:/app/backend/data
+
+volumes:
+  open-webui-data:
