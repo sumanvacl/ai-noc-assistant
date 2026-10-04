@@ -1,0 +1,19 @@
+v1.0.0
+Stargate AI NOC Platform — Initial Release
+
+Initial production-oriented AI/NOC engineering release.
+
+Included:
+
+- Ollama deployment
+- Qwen 3.5 9B
+- Open WebUI
+- RAG knowledge base
+- Network diagnostic tools
+- Ping
+- DNS
+- TCP testing
+- Traceroute
+- Backup procedures
+- Troubleshooting documentation
+- Security architecture
