@@ -1,0 +1,41 @@
+# Secrets
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.crt
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Backups
+*.tar
+*.tar.gz
+*.zip
+backup/
+
+# Logs
+*.log
+logs/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Production data
+production/
+customer-data/
+private/
