@@ -1,0 +1,29 @@
+[Unit]
+Description=Ollama Service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=notify
+ExecStart=/usr/local/bin/ollama serve
+
+# Listen on the required network interface.
+Environment="OLLAMA_HOST=0.0.0.0:11434"
+
+# Limit concurrent model execution.
+Environment="OLLAMA_NUM_PARALLEL=1"
+
+# Keep only one large model loaded at a time.
+Environment="OLLAMA_MAX_LOADED_MODELS=1"
+
+# Keep the model loaded for faster repeated requests.
+Environment="OLLAMA_KEEP_ALIVE=30m"
+
+# Give inference slightly higher CPU scheduling priority.
+Nice=-5
+
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
